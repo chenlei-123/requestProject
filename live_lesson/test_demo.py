@@ -19,7 +19,8 @@ def test_demo():
         "userid": "ChenLei",
         "name": "陈磊1111"
     }
-    r = requests.post(url, json=body)
+    header = {"cpntent-type": "application/json"}
+    r = requests.post(url, data=body, headers=header)
     print(r.json())
 
     #     创建成员
@@ -28,7 +29,7 @@ def test_demo():
         "userid": "zhangsan",
         "name": "张三",
         "mobile": "+86 13800000001",
-        "department":[1]
+        "department": [1]
     }
     r = requests.post(url, json=body)
     print(r.json())
